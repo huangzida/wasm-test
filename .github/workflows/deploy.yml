@@ -26,6 +26,21 @@ jobs:
         with:
           version: 10.32.1
 
+      - name: Install wasm-pack
+        uses: jetbrains/wasm-pack@v2
+        with:
+          version: latest
+
+      - name: Add wasm target
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Build WASM
+        run: wasm-pack build --target web --release
+        working-directory: wasm
+
+      - name: Move pkg to frontend
+        run: mv wasm/pkg frontend/
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

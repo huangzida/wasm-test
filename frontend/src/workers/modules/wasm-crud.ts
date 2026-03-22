@@ -37,7 +37,7 @@ export async function runWasmCrud(
   
   // 反序列化结果
   const resultText = new TextDecoder().decode(resultBytes);
-  const result = JSON.parse(resultText);
+  JSON.parse(resultText);
   
   const totalTime = performance.now() - start;
   const transferTime = 0;

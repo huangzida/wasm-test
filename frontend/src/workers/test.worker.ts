@@ -2,7 +2,7 @@ import { runJsRecursive, runJsCrud } from './modules/js-recursive';
 import { runWasmJsObject } from './modules/wasm-js-object';
 import { runWasmBinary } from './modules/wasm-binary';
 import { runWasmCrud } from './modules/wasm-crud';
-import type { TreeNode, TestResult } from '../types';
+import type { TestResult } from '../types';
 
 self.onmessage = async (e: MessageEvent) => {
   const { testType, data, crudConfig } = e.data;
