@@ -27,9 +27,8 @@ jobs:
           version: 10.32.1
 
       - name: Install wasm-pack
-        uses: taiki-e/install-action@v2
-        with:
-          package: wasm-pack
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Add wasm target
         run: rustup target add wasm32-unknown-unknown
